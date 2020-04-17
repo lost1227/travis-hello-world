@@ -1,4 +1,13 @@
 language: java
 jdk:
 - openjdk8
-script: ant build
+
+addons:
+  sonarcloud:
+    organization: "lost1227"
+    token:
+      secure: "jOJoMQhoDRsDDEVvb0qs+LY2L+h4O+d4NXuL0CgOyCF9SLdAW0hTEouyrWpF3ZPHmZtAQGHnhdDB8MXeTT3XKhcb4cOlcJCufjLfAI9MMAnNqEA+XRk6RPknlpHdFSoXy4rrq9wmIWjhS31hRGFy31XRdbM11bHtWGrXz8ofoizRtZPgYnIYHWLe27kQjvvH9gjJNZdWtqSnDPpNmHBECmuFGwJjKdPOvaF1Z4wNrlYxoeAfQXewwAT9CWPWizkwy4Ct3plTuA4KnIDOQO5kGivnF2QAF8ArpEV8wtlqvim0RAtfjv7sPH5yTY693hm8dLONwNLfAWQgQzP88yVljKYO4VYC8Lrh54Xj3u22Wu91q6TRhxGSV9VLdafCv9UT2Yi8o/GYMv1SzlscczSWsHPvyYRwE+Jao9d4YMsfdaLlUI937THoGWdWZS815shQC2oO+9BbfSIAeaytzWye9ZIL0mlNkNz9LIaq2jnfwHdssT1ZxWpHWXV3UFz6m6jO2jP6TNbfh9ES5PYIGXh/zgSTho8Sse+sbr3SlxgRDfvjX3jgpuXD2d3cc9l/Q9/LKTPJzvD3K0f7FNO2wuMkbuTcNDtzC5ZOFyISZKpXp3BJtoTW3niCL+YBirwHGD6aFgp4sny0IgHG1GBXbQuVokm9MYvxoB0eRa6pLJ/j5zI="
+
+script:
+- ant build
+- sonar-scanner
